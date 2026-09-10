@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Book Consultation — Alan Humphreys</title>
+  <meta name="description" content="Get in touch with Alan Humphreys for 1-on-1 hair loss consultations, studio growth advisory, trichology training, or brand ambassadorship in Denver, CO or remotely worldwide.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Contact & Book Consultation — Alan Humphreys">
+  <meta property="og:description" content="Direct access to 25+ years of hair loss industry experience. Schedule your confidential consultation today.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='serif' fill='%23C9A84C'>A</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="container container--wide">
+      <a href="index.html" class="nav-logo">ALAN <span>Humphreys</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Book a Call</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- BANNER -->
+  <section class="page-banner">
+    <div class="container">
+      <p class="breadcrumb reveal"><a href="index.html">Home</a> / Contact</p>
+      <h1 class="reveal stagger-1">Let's Connect</h1>
+      <p class="lead reveal stagger-2">
+        Whether you are seeking advice on your personal hair loss journey, looking to scale your studio, or want to explore brand collaboration — I read and respond to every message personally.
+      </p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTACT SECTION -->
+  <section class="contact-main-section">
+    <div class="container container--wide">
+      <div class="contact-layout-grid">
+        
+        <!-- Left: Direct Info & Booking Options -->
+        <div class="contact-info-col reveal-left">
+          
+          <div class="info-card-header">
+            <span class="section-label">Direct Communication</span>
+            <h2>How I Can Help You</h2>
+            <p>I offer specialized consultation tracks tailored to individual clients, studio owners, and industry manufacturers.</p>
+          </div>
+
+          <div class="contact-methods-list">
+            
+            <div class="method-card">
+              <div class="method-icon">👤</div>
+              <div>
+                <h4>Private Individual Consultation</h4>
+                <p>Confidential 1-on-1 assessment of your hair restoration options, scalp condition, and non-surgical solutions.</p>
+                <span class="method-tag">Virtual or In-Person (Denver, CO)</span>
+              </div>
+            </div>
+
+            <div class="method-card">
+              <div class="method-icon">🏢</div>
+              <div>
+                <h4>Studio Business & Growth Strategy</h4>
+                <p>For studio owners and salon directors seeking to improve client retention, train sales teams, and scale revenue.</p>
+                <span class="method-tag">Advisory & On-Site Workshops</span>
+              </div>
+            </div>
+
+            <div class="method-card">
+              <div class="method-icon">🤝</div>
+              <div>
+                <h4>Brand Ambassadorship & Keynote</h4>
+                <p>Partner with a 25-year industry veteran for product evaluation, educational webinars, and keynotes.</p>
+                <span class="method-tag">Global Partnerships</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Direct Details Box -->
+          <div class="direct-contact-details">
+            <div class="detail-row">
+              <span class="detail-icon">📍</span>
+              <div>
+                <strong>Location & Base:</strong>
+                <p>Denver, Colorado USA (Serving clients globally via video call)</p>
+              </div>
+            </div>
+            <div class="detail-row">
+              <span class="detail-icon">✉️</span>
+              <div>
+                <strong>Direct Email:</strong>
+                <p><a href="mailto:consult@alan-humphreys.com">consult@alan-humphreys.com</a></p>
+              </div>
+            </div>
+            <div class="detail-row">
+              <span class="detail-icon">⏱️</span>
+              <div>
+                <strong>Response Time:</strong>
+                <p>Within 24 business hours (Monday – Friday)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Personal reassurance note -->
+          <div class="reassurance-quote">
+            <p>"Having sat in the consultation chair as a 21-year-old client myself, I know how hard it is to reach out. Rest assured your message is completely private, confidential, and will be handled with empathy."</p>
+            <div class="quote-sign">— Alan Humphreys</div>
+          </div>
+
+        </div>
+
+        <!-- Right: Interactive Form -->
+        <div class="contact-form-col reveal-right">
+          <div class="form-wrapper-box">
+            <h3 class="form-title">Send a Direct Message</h3>
+            <p class="form-subtext">Fill out the brief form below and select your topic. Alan's team will get back to you promptly.</p>
+            
+            <form id="contactForm" class="interactive-contact-form" onsubmit="event.preventDefault(); handleFormSubmit();">
+              
+              <div class="form-group">
+                <label for="fullName">Your Full Name <span class="req">*</span></label>
+                <input type="text" id="fullName" name="fullName" required placeholder="e.g. David Miller" aria-label="Your Full Name">
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="emailAddr">Email Address <span class="req">*</span></label>
+                  <input type="email" id="emailAddr" name="emailAddr" required placeholder="david@example.com" aria-label="Email Address">
+                </div>
+                <div class="form-group">
+                  <label for="phoneNum">Phone Number (Optional)</label>
+                  <input type="tel" id="phoneNum" name="phoneNum" placeholder="(303) 555-0192" aria-label="Phone Number">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="inquiryType">What is the primary topic of your inquiry? <span class="req">*</span></label>
+                <select id="inquiryType" name="inquiryType" required aria-label="Inquiry Topic">
+                  <option value="" disabled selected>Select a option...</option>
+                  <option value="personal">Personal Hair Loss Consultation</option>
+                  <option value="studio">Studio Owner / Business Growth Advisory</option>
+                  <option value="trichology">Trichology & Scalp Health Questions</option>
+                  <option value="products">Product & Maintenance Kit Inquiry</option>
+                  <option value="speaking">Brand Partnership / Speaking / Media</option>
+                  <option value="other">General Inquiry</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="messageText">How can Alan best assist you? <span class="req">*</span></label>
+                <textarea id="messageText" name="messageText" rows="5" required placeholder="Please share a few details about your situation, goals, or timeline..." aria-label="Your Message"></textarea>
+              </div>
+
+              <div class="form-group checkbox-group">
+                <label class="custom-checkbox">
+                  <input type="checkbox" id="privacyConsent" required>
+                  <span class="checkmark"></span>
+                  <span class="cb-label">I consent to receiving a direct email response regarding my inquiry. My details will never be shared with third parties.</span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block submit-btn" id="submitBtn">
+                <span>Send Confidential Message</span>
+                <span class="btn-spinner" style="display:none;">⏳</span>
+              </button>
+
+            </form>
+
+            <!-- Success notification box -->
+            <div id="formSuccessMessage" class="form-success-alert" style="display: none;">
+              <div class="success-icon">✅</div>
+              <h4>Message Received, Thank You!</h4>
+              <p>Alan has received your inquiry. A member of our team (or Alan personally) will reach out to your email address within 24 hours.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="contact-faq-section">
+    <div class="container container--wide">
+      <div class="section-title-wrap text-center reveal">
+        <span class="section-label">Common Questions</span>
+        <h2>Consultation FAQs</h2>
+        <div class="divider divider--center"></div>
+      </div>
+
+      <div class="faq-grid grid-2 reveal stagger-1">
+        <div class="faq-card">
+          <h4>Are video consultations just as effective as in-person?</h4>
+          <p>Yes. Over 60% of Alan's individual consultations are conducted securely via Zoom. High-definition video allows Alan to inspect scalp density, hairline geometry, and evaluate photos effectively.</p>
+        </div>
+        <div class="faq-card">
+          <h4>What should I prepare before my consultation call?</h4>
+          <p>Have a clear idea of your goals, any current hair maintenance routine you use, and photos of your hairline from 3-5 years ago if available. Alan will guide you through the rest.</p>
+        </div>
+        <div class="faq-card">
+          <h4>Does Alan sell high-pressure contracts?</h4>
+          <p>Never. Having bought and built Hair Vital on trust, Alan believes in complete transparency. You will receive honest recommendations without aggressive sales tactics.</p>
+        </div>
+        <div class="faq-card">
+          <h4>How do studio advisory sessions work?</h4>
+          <p>Advisory sessions begin with a comprehensive review of your studio's consultation workflow, retention numbers, and staff training needs, followed by a customized strategy blueprint.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container container--wide">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">ALAN <span>Humphreys</span></a>
+          <p>25+ years of leadership, innovation, and compassion in hair loss solutions. Certified Trichologist, business consultant, and industry mentor.</p>
+          <div class="footer-socials">
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><span>in</span></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><span>ig</span></a>
+            <a href="https://youtube.com" target="_blank" aria-label="YouTube"><span>yt</span></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="about.html">About Alan</a></li>
+            <li><a href="index.html#services">Consulting Services</a></li>
+            <li><a href="products.html">Curated Products</a></li>
+            <li><a href="blog.html">Industry Insights</a></li>
+            <li><a href="contact.html">Contact & Booking</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Specialties</h4>
+          <ul>
+            <li><a href="index.html#services">Hair Loss Consultation</a></li>
+            <li><a href="index.html#services">Studio Growth Strategy</a></li>
+            <li><a href="index.html#services">Trichology Protocols</a></li>
+            <li><a href="index.html#services">Brand Ambassador</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Direct Contact</h4>
+          <p class="footer-contact-item"><strong>Location:</strong> Denver, Colorado</p>
+          <p class="footer-contact-item"><strong>Email:</strong> consult@alan-humphreys.com</p>
+          <a href="contact.html" class="btn btn-primary btn-sm mt-3">Book Consultation</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Alan Humphreys. All rights reserved. Built for long-term growth and trust.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    function handleFormSubmit() {
+      const btn = document.getElementById('submitBtn');
+      const form = document.getElementById('contactForm');
+      const success = document.getElementById('formSuccessMessage');
+
+      btn.disabled = true;
+      btn.querySelector('.btn-spinner').style.display = 'inline-block';
+      
+      setTimeout(() => {
+        form.style.display = 'none';
+        success.style.display = 'block';
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 1000);
+    }
+  </script>
+</body>
+</html>

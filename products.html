@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products — Alan Humphreys | Hair Solutions & Professional Resources</title>
+  <meta name="description" content="Hand-selected hair care products, trichology treatments, and professional training resources backed by 25+ years of personal testing and industry expertise.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='serif' fill='%23C9A84C'>A</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="container container--wide">
+      <a href="index.html" class="nav-logo">ALAN <span>Humphreys</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="nav-cta">Book a Call</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- BANNER -->
+  <section class="page-banner">
+    <div class="container">
+      <p class="breadcrumb reveal"><a href="index.html">Home</a> / Products</p>
+      <h1 class="reveal stagger-1">Curated Products</h1>
+      <p class="lead reveal stagger-2">
+        Everything here has been personally tested, used, or developed by me over 25 years. I don't recommend anything I wouldn't use on myself.
+      </p>
+    </div>
+  </section>
+
+  <!-- PRODUCTS CATALOG -->
+  <section class="products-intro">
+    <div class="container container--wide">
+      <!-- Filters -->
+      <div class="products-filter reveal">
+        <button class="filter-btn active" data-filter="all">All Products</button>
+        <button class="filter-btn" data-filter="care">Hair System Care</button>
+        <button class="filter-btn" data-filter="trichology">Trichology</button>
+        <button class="filter-btn" data-filter="training">Training & Guides</button>
+        <button class="filter-btn" data-filter="tools">Professional Tools</button>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="products-catalog">
+
+        <a href="product-details.html" class="catalog-card reveal stagger-1" data-category="care">
+          <div class="card-image">
+            <span class="card-icon">🧴</span>
+            <span class="card-badge">Best Seller</span>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Hair System Care</span>
+            <h3>Complete Hair System Maintenance Kit</h3>
+            <p class="card-desc">Everything you need to maintain your hair system like a professional — adhesive, remover, conditioner, and brush. Curated from 25 years of personal use.</p>
+            <span class="card-action">Learn More →</span>
+          </div>
+        </a>
+
+        <a href="product-details.html" class="catalog-card reveal stagger-2" data-category="trichology">
+          <div class="card-image">
+            <span class="card-icon">💆</span>
+            <span class="card-badge">New</span>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Trichology</span>
+            <h3>Scalp Health Revival Treatment</h3>
+            <p class="card-desc">Clinical-grade scalp treatment for early-stage hair loss and scalp conditions. Based on protocols I developed at Hair Vital starting in 2014.</p>
+            <span class="card-action">Learn More →</span>
+          </div>
+        </a>
+
+        <a href="product-details.html" class="catalog-card reveal stagger-3" data-category="training">
+          <div class="card-image">
+            <span class="card-icon">📘</span>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Training</span>
+            <h3>The Hair Studio Sales Playbook</h3>
+            <p class="card-desc">My complete sales methodology — from first consultation to closing. The exact techniques that helped me close thousands of clients and train dozens of sales teams.</p>
+            <span class="card-action">Learn More →</span>
+          </div>
+        </a>
+
+        <a href="product-details.html" class="catalog-card reveal stagger-1" data-category="care">
+          <div class="card-image">
+            <span class="card-icon">🧼</span>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Hair System Care</span>
+            <h3>Pro-Grade Adhesive & Remover Set</h3>
+            <p class="card-desc">The adhesive system I used on myself and my clients for over 15 years. Strong hold, clean removal, no residue. Tested in Colorado's dry climate and Florida's humidity.</p>
+            <span class="card-action">Learn More →</span>
+          </div>
+        </a>
+
+        <a href="product-details.html" class="catalog-card reveal stagger-2" data-category="trichology">
+          <div class="card-image">
+            <span class="card-icon">🔬</span>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Trichology</span>
+            <h3>Trichology Starter Kit for Studios</h3>
+            <p class="card-desc">Everything a salon or studio needs to begin offering trichology services. Products, intake forms, consultation scripts, and a quick-start guide.</p>
+            <span class="card-action">Learn More →</span>
+          </div>
+        </a>
+
+        <a href="product-details.html" class="catalog-card reveal stagger-3" data-category="training">
+          <div class="card-image">
+            <span class="card-icon">🎓</span>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Training</span>
+            <h3>Client Retention Masterclass</h3>
+            <p class="card-desc">A video course on keeping clients loyal for the long haul. Covers follow-up systems, managing expectations, handling unhappy clients, and building genuine relationships.</p>
+            <span class="card-action">Learn More →</span>
+          </div>
+        </a>
+
+        <a href="product-details.html" class="catalog-card reveal stagger-1" data-category="tools">
+          <div class="card-image">
+            <span class="card-icon">✂️</span>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Professional Tools</span>
+            <h3>Studio Essentials Tool Kit</h3>
+            <p class="card-desc">The professional tools every hair replacement studio needs — from application supplies to consultation materials. Built from my experience running a studio for 25 years.</p>
+            <span class="card-action">Learn More →</span>
+          </div>
+        </a>
+
+        <a href="product-details.html" class="catalog-card reveal stagger-2" data-category="tools">
+          <div class="card-image">
+            <span class="card-icon">📋</span>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Professional Tools</span>
+            <h3>Business Launch Blueprint</h3>
+            <p class="card-desc">Templates, checklists, and SOPs for launching or restructuring a hair loss studio. Marketing templates, pricing frameworks, and operational playbooks included.</p>
+            <span class="card-action">Learn More →</span>
+          </div>
+        </a>
+
+        <a href="product-details.html" class="catalog-card reveal stagger-3" data-category="care">
+          <div class="card-image">
+            <span class="card-icon">💧</span>
+          </div>
+          <div class="card-body">
+            <span class="card-category">Hair System Care</span>
+            <h3>Daily Conditioning System</h3>
+            <p class="card-desc">Lightweight daily conditioner specifically formulated for hair systems. Keeps hair soft, manageable, and natural-looking between maintenance appointments.</p>
+            <span class="card-action">Learn More →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background: var(--navy); padding: 5rem 0; text-align: center;">
+    <div class="container">
+      <h2 class="reveal">Can't Find What You Need?</h2>
+      <p class="reveal stagger-1" style="color: var(--warm-gray); max-width: 500px; margin: 0 auto 2rem;">
+        I'm always happy to make specific recommendations based on your situation. Drop me a line.
+      </p>
+      <div class="reveal stagger-2">
+        <a href="contact.html" class="btn btn-primary">Get in Touch →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container container--wide">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">ALAN <span>Humphreys</span></a>
+          <p>25+ years of leadership in hair loss solutions, trichology, and business growth strategy.</p>
+          <div class="footer-social">
+            <a href="https://wa.me/+13037181870" target="_blank" title="WhatsApp">💬</a>
+            <a href="mailto:alanhumphreys72@gmail.com" title="Email">📧</a>
+            <a href="tel:+13037181870" title="Phone">📞</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#services">Virtual Consultations</a></li>
+            <li><a href="index.html#services">Sales Training</a></li>
+            <li><a href="index.html#services">Trichology Training</a></li>
+            <li><a href="index.html#services">Speaking</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Alan Humphreys. All rights reserved.</p>
+        <p>North Palm Beach, FL · <a href="tel:+13037181870">303-718-1870</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+  <script src="script.js"></script>
+  <script>
+    // Product category filter
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.catalog-card').forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = '';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+              card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 50);
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
