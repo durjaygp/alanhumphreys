@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,332 +16,386 @@
   <!-- Favicon (gold monogram) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='serif' fill='%23C9A84C'>A</text></svg>">
 
-  <link rel="stylesheet" href="styles.css">
+  <!-- Tailwind compiled output CSS -->
+  <link rel="stylesheet" href="output.css">
 </head>
-<body>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-body selection:bg-amber-500/30 selection:text-amber-300 transition-colors duration-300">
 
   <!-- ============ NAVIGATION ============ -->
-  <nav class="navbar" id="navbar">
-    <div class="container container--wide">
-      <a href="#hero" class="nav-logo">ALAN <span>Humphreys</span></a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#credentials">Credentials</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#content">Content</a></li>
-        <li><a href="#contact" class="nav-cta">Book a Call</a></li>
+  <nav class="fixed top-0 left-0 w-full z-50 py-4 transition-all duration-300 bg-white/95 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/60" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <a href="#hero" class="font-heading text-xl sm:text-2xl font-bold tracking-wider text-slate-900 dark:text-slate-100">
+        ALAN <span class="font-normal text-amber-500">Humphreys</span>
+      </a>
+
+      <ul class="hidden md:flex items-center space-x-8 font-medium text-xs tracking-widest uppercase text-slate-700 dark:text-slate-300" id="navLinks">
+        <li><a href="#about" class="hover:text-amber-500 dark:hover:text-amber-400 transition-colors">About</a></li>
+        <li><a href="#services" class="hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Services</a></li>
+        <li><a href="#credentials" class="hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Credentials</a></li>
+        <li><a href="#gallery" class="hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Gallery</a></li>
+        <li><a href="#testimonials" class="hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Testimonials</a></li>
+        <li><a href="#products" class="hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Products</a></li>
+        <li><a href="#content" class="hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Content</a></li>
+        <li><a href="#contact" class="px-5 py-2 bg-gradient-to-r from-amber-500 to-amber-400 text-slate-950 font-semibold rounded-full shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 hover:-translate-y-0.5 transition-all">Book a Call</a></li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+
+      <div class="flex items-center space-x-3">
+        <button class="p-2.5 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-amber-500 dark:text-amber-400 hover:scale-105 transition-transform" id="themeToggle" aria-label="Toggle light and dark theme">
+          <span class="theme-toggle-icon text-lg leading-none block">🌙</span>
+        </button>
+        <button class="md:hidden p-2 text-slate-800 dark:text-slate-300 hover:text-amber-500" id="navToggle" aria-label="Toggle navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
     </div>
   </nav>
-  <div class="mobile-overlay" id="mobileOverlay"></div>
 
   <!-- ============ HERO SECTION ============ -->
-  <section class="hero" id="hero">
-    <div class="container container--wide">
-      <div class="hero-content">
-        <div class="section-label reveal">Hair Loss Solutions Expert</div>
-        <h1 class="hero-name reveal stagger-1">
-          <span class="first-name">ALAN</span>
-          <span class="last-name">Humphreys</span>
-        </h1>
-        <p class="hero-tagline reveal stagger-2">Expert · Consultant · Innovator</p>
-        <p class="hero-description reveal stagger-3">
-          25+ years of leadership in hair loss solutions and business growth strategy. From client to industry pioneer — transforming lives and businesses through innovation, education, and trust.
-        </p>
-        <div class="hero-buttons reveal stagger-4">
-          <a href="#contact" class="btn btn-primary">Book a Consultation</a>
-          <a href="#about" class="btn btn-outline">My Story</a>
-        </div>
-        <div class="hero-stats reveal stagger-5">
-          <div class="hero-stat">
-            <div class="number">25+</div>
-            <div class="label">Years Experience</div>
+  <section class="relative min-h-screen pt-32 pb-20 flex items-center bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 overflow-hidden" id="hero">
+    <!-- Ambient Light Glow -->
+    <div class="absolute -top-40 -right-40 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 left-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 space-y-6 text-left">
+          <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 text-xs font-semibold uppercase tracking-widest">
+            <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+            <span>Hair Loss Solutions Expert</span>
           </div>
-          <div class="hero-stat">
-            <div class="number">3,000+</div>
-            <div class="label">Clients Served</div>
+
+          <h1 class="font-heading text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 dark:text-slate-100 leading-tight">
+            ALAN <span class="text-amber-500 font-normal italic">Humphreys</span>
+          </h1>
+
+          <p class="text-lg sm:text-xl font-medium text-slate-600 dark:text-slate-400 tracking-wide">
+            Expert · Consultant · Innovator
+          </p>
+
+          <p class="text-base sm:text-lg text-slate-700 dark:text-slate-300 max-w-2xl leading-relaxed">
+            25+ years of leadership in hair loss solutions and business growth strategy. From client to industry pioneer — transforming lives and businesses through innovation, education, and trust.
+          </p>
+
+          <div class="pt-2 flex flex-wrap gap-4 items-center">
+            <a href="#contact" class="px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-400 text-slate-950 font-bold text-xs uppercase tracking-widest rounded-lg shadow-xl shadow-amber-500/20 hover:shadow-amber-500/40 hover:-translate-y-1 transition-all">
+              Book a Consultation
+            </a>
+            <a href="#about" class="px-8 py-4 bg-transparent border-2 border-amber-500/50 hover:border-amber-500 text-amber-600 dark:text-amber-400 font-bold text-xs uppercase tracking-widest rounded-lg hover:bg-amber-500/10 transition-all">
+              My Story
+            </a>
           </div>
-          <div class="hero-stat">
-            <div class="number">80+</div>
-            <div class="label">Studios Certified</div>
+
+          <!-- Hero Quick Stats -->
+          <div class="pt-8 border-t border-slate-200 dark:border-slate-800/80 grid grid-cols-3 gap-6 max-w-xl">
+            <div>
+              <div class="font-heading text-3xl sm:text-4xl font-bold text-amber-500 dark:text-amber-400">25+</div>
+              <div class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400 mt-1">Years Experience</div>
+            </div>
+            <div>
+              <div class="font-heading text-3xl sm:text-4xl font-bold text-amber-500 dark:text-amber-400">3,000+</div>
+              <div class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400 mt-1">Clients Served</div>
+            </div>
+            <div>
+              <div class="font-heading text-3xl sm:text-4xl font-bold text-amber-500 dark:text-amber-400">80+</div>
+              <div class="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-400 mt-1">Studios Certified</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="hero-image reveal-right">
-        <div class="hero-image-wrapper">
-          <img src="images/about-portrait.jpg" alt="Alan Humphreys — Hair Loss Solutions Expert" loading="eager">
-        </div>
-        <div class="hero-image-badge">
-          <div class="badge-icon">🏆</div>
-          <div>
-            <div class="badge-text">Lifetime Visionary Award</div>
-            <div class="badge-sub">Hair Visions International · 2018</div>
+
+        <!-- Hero Image -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none rounded-2xl overflow-hidden border-2 border-amber-500/30 shadow-2xl">
+            <img src="images/about-portrait.jpg" alt="Alan Humphreys" class="w-full h-[520px] object-cover object-top hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 dark:from-slate-950/80 via-transparent to-transparent"></div>
+          </div>
+
+          <!-- Floating Badge -->
+          <div class="absolute -bottom-6 -left-6 sm:left-4 p-4 rounded-xl bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-amber-500/30 shadow-xl flex items-center space-x-3">
+            <div class="p-3 rounded-lg bg-amber-500/20 text-amber-500 dark:text-amber-400 text-xl">🏆</div>
+            <div>
+              <div class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Lifetime Visionary Award</div>
+              <div class="text-xs text-slate-600 dark:text-slate-400">Hair Visions International · 2018</div>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- ============ ABOUT SECTION ============ -->
-  <section class="about" id="about">
-    <div class="container container--wide">
-      <div class="about-image reveal-left">
-        <img src="images/services-portrait.jpg" alt="Alan Humphreys professional portrait">
-        <div class="about-image-accent"></div>
-      </div>
-      <div class="about-content">
-        <span class="section-label reveal">My Story</span>
-        <h2 class="section-title reveal stagger-1">From Client to Industry Pioneer</h2>
-        <div class="divider reveal stagger-2"></div>
-        <p class="highlight reveal stagger-2">
-          I started losing my hair at 18. By 21, I walked into a hair replacement clinic as a client — I had to borrow money just for the deposit. That decision didn't just change my appearance. It changed my life.
-        </p>
-        <p class="reveal stagger-3">
-          When I couldn't afford to pay off my balance, the owner hired me as a telemarketer. I quickly moved into sales — because I was living proof that the product worked. Within 2½ years, I found an investor and purchased the company. I was 24 years old, with no business education, no college degree, and no money of my own.
-        </p>
-        <p class="reveal stagger-3">
-          For the next 25 years, I built <strong>Hair Vital</strong> in Denver into a thriving business serving over 3,000 clients. I became a brand ambassador for two of the largest wholesale companies, graced the cover of industry catalogs, appeared on Good Morning America, and was featured in Details Magazine and New York Magazine. In 2014, I made Hair Vital the first company in Colorado to offer trichology services.
-        </p>
-        <p class="reveal stagger-4">
-          After selling my business in 2022, I'm now dedicating this next chapter to helping others in the industry grow — through consulting, training, and sharing 25+ years of lived experience.
-        </p>
-
-        <div class="about-pillars reveal stagger-5">
-          <div class="pillar">
-            <div class="pillar-icon">💡</div>
-            <div class="pillar-name">Innovate</div>
-          </div>
-          <div class="pillar">
-            <div class="pillar-icon">📖</div>
-            <div class="pillar-name">Educate</div>
-          </div>
-          <div class="pillar">
-            <div class="pillar-icon">✨</div>
-            <div class="pillar-name">Transform</div>
-          </div>
-          <div class="pillar">
-            <div class="pillar-icon">✅</div>
-            <div class="pillar-name">Trust</div>
+  <section class="py-24 bg-slate-100 dark:bg-slate-900/60 border-y border-slate-200 dark:border-slate-800/50" id="about">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5">
+          <div class="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl">
+            <img src="images/services-portrait.jpg" alt="Alan Humphreys portrait" class="w-full h-[480px] object-cover">
           </div>
         </div>
+
+        <div class="lg:col-span-7 space-y-6">
+          <div class="text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400">My Story</div>
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100">From Client to Industry Pioneer</h2>
+          <div class="w-16 h-0.5 bg-gradient-to-r from-amber-500 to-amber-300"></div>
+
+          <p class="text-base sm:text-lg text-amber-700 dark:text-amber-300/90 font-medium leading-relaxed">
+            I started losing my hair at 18. By 21, I walked into a hair replacement clinic as a client — I had to borrow money just for the deposit. That decision didn't just change my appearance. It changed my life.
+          </p>
+
+          <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+            When I couldn't afford to pay off my balance, the owner hired me as a telemarketer. I quickly moved into sales — because I was living proof that the product worked. Within 2½ years, I found an investor and purchased the company. I was 24 years old, with no business education, no college degree, and no money of my own.
+          </p>
+
+          <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+            For the next 25 years, I built <strong class="text-amber-600 dark:text-amber-400 font-semibold">Hair Vital</strong> in Denver into a thriving business serving over 3,000 clients. I became a brand ambassador for two of the largest wholesale companies, graced the cover of industry catalogs, appeared on Good Morning America, and was featured in Details Magazine and New York Magazine.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
+              <div class="text-2xl mb-1">💡</div>
+              <div class="text-xs font-semibold text-slate-800 dark:text-slate-200">Innovate</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
+              <div class="text-2xl mb-1">📖</div>
+              <div class="text-xs font-semibold text-slate-800 dark:text-slate-200">Educate</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
+              <div class="text-2xl mb-1">✨</div>
+              <div class="text-xs font-semibold text-slate-800 dark:text-slate-200">Transform</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 text-center shadow-sm">
+              <div class="text-2xl mb-1">✅</div>
+              <div class="text-xs font-semibold text-slate-800 dark:text-slate-200">Trust</div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </div>
   </section>
 
-
-
   <!-- ============ SERVICES SECTION ============ -->
-  <section class="services" id="services">
-    <div class="container container--wide">
-      <div class="services-header">
-        <span class="section-label reveal">What I Offer</span>
-        <h2 class="section-title reveal stagger-1">Consulting & Services</h2>
-        <div class="divider divider--center reveal stagger-2"></div>
-        <p class="section-subtitle reveal stagger-2">
+  <section class="py-24 bg-white dark:bg-slate-950" id="services">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center space-y-4 max-w-3xl mx-auto mb-16">
+        <div class="text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400">What I Offer</div>
+        <h2 class="font-heading text-3xl sm:text-5xl font-bold text-slate-900 dark:text-slate-100">Consulting & Services</h2>
+        <div class="w-16 h-0.5 bg-gradient-to-r from-amber-500 to-amber-300 mx-auto"></div>
+        <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
           Whether you're just starting out or looking to scale, I bring decades of hands-on experience to help you build a profitable, client-centered hair loss business.
         </p>
       </div>
 
-      <div class="services-grid">
-        <div class="service-card reveal stagger-1">
-          <div class="service-icon">📞</div>
-          <h3>Virtual Consultations</h3>
-          <p>One-on-one strategy sessions for business owners, salon operators, and sales teams looking to improve conversions and client satisfaction.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 hover:border-amber-500/40 hover:-translate-y-1 transition-all group shadow-sm hover:shadow-xl">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 dark:text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">📞</div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-slate-100 mb-3">Virtual Consultations</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">One-on-one strategy sessions for business owners, salon operators, and sales teams looking to improve conversions.</p>
         </div>
 
-        <div class="service-card reveal stagger-2">
-          <div class="service-icon">📈</div>
-          <h3>Sales Training & Coaching</h3>
-          <p>Proven techniques from 25+ years of closing. Boost your team's closing percentage, handle objections, and turn first-timers into loyal clients.</p>
+        <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 hover:border-amber-500/40 hover:-translate-y-1 transition-all group shadow-sm hover:shadow-xl">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 dark:text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">📈</div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-slate-100 mb-3">Sales Training & Coaching</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Proven techniques from 25+ years of closing. Boost your team's closing percentage and handle objections ethically.</p>
         </div>
 
-        <div class="service-card reveal stagger-3">
-          <div class="service-icon">🔬</div>
-          <h3>Trichology Training</h3>
-          <p>Learn how to add trichology services to your business — the fastest-growing segment of the industry and the key to expanding your client base.</p>
+        <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 hover:border-amber-500/40 hover:-translate-y-1 transition-all group shadow-sm hover:shadow-xl">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 dark:text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">🔬</div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-slate-100 mb-3">Trichology Training</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Learn how to add clinical trichology services to your business — the fastest-growing segment of the industry.</p>
         </div>
 
-        <div class="service-card reveal stagger-4">
-          <div class="service-icon">🏢</div>
-          <h3>Business Strategy & Advisory</h3>
-          <p>Strategic planning for hair loss businesses at any stage. From startup launch to operational turnaround — including staff, environment, and client retention.</p>
+        <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 hover:border-amber-500/40 hover:-translate-y-1 transition-all group shadow-sm hover:shadow-xl">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 dark:text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">🏢</div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-slate-100 mb-3">Business Strategy & Advisory</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Strategic planning for hair loss businesses at any stage. From launch to operational turnaround and retention.</p>
         </div>
 
-        <div class="service-card reveal stagger-5">
-          <div class="service-icon">🎤</div>
-          <h3>Speaking & Training</h3>
-          <p>Engaging keynote presentations and hands-on training workshops for conferences, industry events, and in-house teams.</p>
+        <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 hover:border-amber-500/40 hover:-translate-y-1 transition-all group shadow-sm hover:shadow-xl">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 dark:text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">🎤</div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-slate-100 mb-3">Speaking & Training</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Engaging keynote presentations and hands-on workshops for industry conferences and in-house teams.</p>
         </div>
 
-        <div class="service-card reveal stagger-6">
-          <div class="service-icon">🎬</div>
-          <h3>Content Creation & Podcast</h3>
-          <p>Authentic industry content that resonates — from video production and podcast appearances to social media strategy for hair loss professionals.</p>
+        <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 hover:border-amber-500/40 hover:-translate-y-1 transition-all group shadow-sm hover:shadow-xl">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 dark:text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">🎬</div>
+          <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-slate-100 mb-3">Content Creation & Podcast</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Authentic industry content that resonates — video production, podcast appearances, and social media strategy.</p>
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- ============ CREDENTIALS & MEDIA ============ -->
-  <section class="credentials" id="credentials">
-    <div class="container container--wide">
-      <span class="section-label reveal">Credentials</span>
-      <h2 class="section-title reveal stagger-1">Awards, Certifications & Media</h2>
-      <div class="divider reveal stagger-2"></div>
+  <section class="py-24 bg-slate-100 dark:bg-slate-900/40 border-t border-slate-200 dark:border-slate-800/50" id="credentials">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-4 mb-16">
+        <div class="text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400">Credentials</div>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100">Awards, Certifications & Media</h2>
+        <div class="w-16 h-0.5 bg-gradient-to-r from-amber-500 to-amber-300"></div>
+      </div>
 
-      <div class="credentials-grid">
-        <!-- Awards & Certifications -->
-        <div class="cred-block reveal stagger-2">
-          <h3><span>🏆</span> Awards & Certifications</h3>
-          <ul class="cred-list">
-            <li>
-              <span class="cred-year">2026</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div class="p-8 rounded-2xl bg-white dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <h3 class="font-heading text-xl font-bold text-amber-600 dark:text-amber-400 mb-6 flex items-center space-x-2">
+            <span>🏆</span> <span>Awards & Certifications</span>
+          </h3>
+          <ul class="space-y-4 text-sm text-slate-700 dark:text-slate-300">
+            <li class="flex items-start space-x-3 pb-3 border-b border-slate-100 dark:border-slate-800/60">
+              <span class="font-heading font-bold text-amber-500 dark:text-amber-400 min-w-[50px]">2026</span>
               <span>USTI & AMCA Clinical Trichologist Certification</span>
             </li>
-            <li>
-              <span class="cred-year">2018</span>
+            <li class="flex items-start space-x-3 pb-3 border-b border-slate-100 dark:border-slate-800/60">
+              <span class="font-heading font-bold text-amber-500 dark:text-amber-400 min-w-[50px]">2018</span>
               <span>Lifetime Visionary Award — Hair Visions International Conference</span>
             </li>
-            <li>
-              <span class="cred-year">2014</span>
+            <li class="flex items-start space-x-3 pb-3 border-b border-slate-100 dark:border-slate-800/60">
+              <span class="font-heading font-bold text-amber-500 dark:text-amber-400 min-w-[50px]">2014</span>
               <span>Capilia Certified Trichology Assistant — First in Colorado</span>
             </li>
-            <li>
-              <span class="cred-year">2000</span>
+            <li class="flex items-start space-x-3">
+              <span class="font-heading font-bold text-amber-500 dark:text-amber-400 min-w-[50px]">2000</span>
               <span>Brand Ambassador & Model — On Rite, Hair Visions International</span>
             </li>
           </ul>
         </div>
 
-        <!-- Media & Press -->
-        <div class="cred-block reveal stagger-3">
-          <h3><span>📺</span> Media & Press</h3>
-          <ul class="cred-list">
-            <li>
-              <span class="cred-year">2007</span>
+        <div class="p-8 rounded-2xl bg-white dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 shadow-sm">
+          <h3 class="font-heading text-xl font-bold text-amber-600 dark:text-amber-400 mb-6 flex items-center space-x-2">
+            <span>📺</span> <span>Media & Press</span>
+          </h3>
+          <ul class="space-y-4 text-sm text-slate-700 dark:text-slate-300">
+            <li class="flex items-start space-x-3 pb-3 border-b border-slate-100 dark:border-slate-800/60">
+              <span class="font-heading font-bold text-amber-500 dark:text-amber-400 min-w-[50px]">2007</span>
               <span>Good Morning America — "Movie and a Makeover" Feature</span>
             </li>
-            <li>
-              <span class="cred-year">2007</span>
+            <li class="flex items-start space-x-3 pb-3 border-b border-slate-100 dark:border-slate-800/60">
+              <span class="font-heading font-bold text-amber-500 dark:text-amber-400 min-w-[50px]">2007</span>
               <span>New York Magazine — Feature that led to GMA appearance</span>
             </li>
-            <li>
-              <span class="cred-year">2001</span>
+            <li class="flex items-start space-x-3 pb-3 border-b border-slate-100 dark:border-slate-800/60">
+              <span class="font-heading font-bold text-amber-500 dark:text-amber-400 min-w-[50px]">2001</span>
               <span>Details Magazine — Full Page Feature</span>
             </li>
-            <li>
-              <span class="cred-year">2008+</span>
+            <li class="flex items-start space-x-3">
+              <span class="font-heading font-bold text-amber-500 dark:text-amber-400 min-w-[50px]">2008+</span>
               <span>TV commercials, infomercials & local news affiliates nationwide</span>
             </li>
           </ul>
         </div>
       </div>
 
-      <!-- Media Gallery -->
-      <div class="media-logos reveal stagger-4" style="margin-top: 2rem;">
-        <div class="media-logo-card">
-          <img src="images/onrite-cover.png" alt="Alan Humphreys on On Rite catalog cover">
-          <div class="card-caption">On Rite Men's Catalog — Cover Model</div>
+      <!-- Media Image Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="rounded-xl overflow-hidden bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 group shadow-sm">
+          <img src="images/onrite-cover.png" alt="On Rite Cover" class="w-full h-56 object-contain bg-slate-950 p-2 group-hover:scale-105 transition-transform">
+          <div class="p-4 text-xs font-semibold text-amber-600 dark:text-amber-400 border-t border-slate-100 dark:border-slate-800">On Rite Men's Catalog Cover Model</div>
         </div>
-        <div class="media-logo-card">
-          <img src="images/ortech-brand.png" alt="Alan Humphreys OrTech brand ambassador">
-          <div class="card-caption">OrTech Brand Ambassador — "When Only the Best is Good Enough"</div>
+        <div class="rounded-xl overflow-hidden bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 group shadow-sm">
+          <img src="images/ortech-brand.png" alt="OrTech Ambassador" class="w-full h-56 object-contain bg-slate-950 p-2 group-hover:scale-105 transition-transform">
+          <div class="p-4 text-xs font-semibold text-amber-600 dark:text-amber-400 border-t border-slate-100 dark:border-slate-800">OrTech Brand Ambassador</div>
         </div>
-        <div class="media-logo-card">
-          <img src="images/award-ceremony.jpg" alt="Alan Humphreys receiving Lifetime Visionary Award">
-          <div class="card-caption">Lifetime Visionary Award — Hair Visions International 2018</div>
+        <div class="rounded-xl overflow-hidden bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 group shadow-sm">
+          <img src="images/award-ceremony.jpg" alt="Lifetime Visionary Award" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
+          <div class="p-4 text-xs font-semibold text-amber-600 dark:text-amber-400 border-t border-slate-100 dark:border-slate-800">Lifetime Visionary Award 2018</div>
         </div>
-        <div class="media-logo-card">
-          <img src="images/trichology-cert.jpg" alt="Alan Humphreys Trichology certification">
-          <div class="card-caption">Clinical Trichologist Certification — US Trichology Institute 2026</div>
+        <div class="rounded-xl overflow-hidden bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 group shadow-sm">
+          <img src="images/trichology-cert.jpg" alt="Trichology Certificate" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
+          <div class="p-4 text-xs font-semibold text-amber-600 dark:text-amber-400 border-t border-slate-100 dark:border-slate-800">Clinical Trichologist 2026</div>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- ============ GALLERY SECTION ============ -->
-  <section class="gallery" id="gallery">
-    <div class="container container--wide">
-      <div class="gallery-header">
-        <span class="section-label reveal">Portfolio</span>
-        <h2 class="section-title reveal stagger-1">Transformation & Career Gallery</h2>
-        <div class="divider divider--center reveal stagger-2"></div>
-        <p class="section-subtitle reveal stagger-2">
+  <section class="py-24 bg-white dark:bg-slate-950" id="gallery">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center space-y-4 max-w-3xl mx-auto mb-16">
+        <div class="text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400">Portfolio</div>
+        <h2 class="font-heading text-3xl sm:text-5xl font-bold text-slate-900 dark:text-slate-100">Transformation & Career Gallery</h2>
+        <div class="w-16 h-0.5 bg-gradient-to-r from-amber-500 to-amber-300 mx-auto"></div>
+        <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
           From my own personal transformation to decades of professional work — every image tells a story of confidence restored.
         </p>
       </div>
 
-      <div class="gallery-grid">
-        <!-- Featured Before/After -->
-        <div class="gallery-featured reveal">
-          <div class="gallery-item">
-            <img src="images/before-after.png" alt="Alan Humphreys before and after hair restoration">
-            <div class="overlay"><span>Personal Transformation — Before & After</span></div>
-          </div>
-          <div style="display:flex; flex-direction:column; justify-content:center; padding: 2rem;">
-            <h3 style="margin-bottom: 1rem; color: var(--gold);">My Personal Transformation</h3>
-            <p style="color: var(--silver); font-size: 0.95rem; line-height: 1.8;">
-              I started losing my hair at 18. The depression and negative feelings affected every area of my life. Getting my hair back didn't just restore my appearance — it restored my confidence and changed the trajectory of my entire life. This is why I've dedicated my career to helping others experience that same transformation.
-            </p>
-          </div>
+      <!-- Featured Before & After -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 p-8 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 items-center shadow-sm">
+        <div class="lg:col-span-6 rounded-xl overflow-hidden bg-slate-950 border border-slate-800">
+          <img src="images/before-after.png" alt="Personal Transformation" class="w-full h-[360px] object-contain">
         </div>
-
-        <div class="gallery-item reveal stagger-1">
-          <img src="images/professional-1.jpg" alt="Alan Humphreys professional photo">
-          <div class="overlay"><span>Professional Photoshoot</span></div>
-        </div>
-        <div class="gallery-item reveal stagger-2">
-          <img src="images/conference-stage.jpg" alt="Alan Humphreys on conference stage">
-          <div class="overlay"><span>Industry Conference — On Stage</span></div>
-        </div>
-        <div class="gallery-item reveal stagger-3">
-          <img src="images/photoshoot.jpg" alt="Alan Humphreys studio photoshoot">
-          <div class="overlay"><span>Behind the Scenes — Studio Session</span></div>
+        <div class="lg:col-span-6 space-y-4">
+          <h3 class="font-heading text-2xl font-bold text-amber-600 dark:text-amber-400">My Personal Transformation</h3>
+          <p class="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+            I started losing my hair at 18. The depression and negative feelings affected every area of my life. Getting my hair back didn't just restore my appearance — it restored my confidence and changed the trajectory of my entire life. This is why I've dedicated my career to helping others experience that same transformation.
+          </p>
         </div>
       </div>
+
+      <!-- Grid Portfolio -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg group relative cursor-pointer">
+          <img src="images/professional-1.jpg" alt="Professional photoshoot" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+            <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Professional Photoshoot</span>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg group relative cursor-pointer">
+          <img src="images/conference-stage.jpg" alt="Industry Conference stage" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+            <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Industry Conference — On Stage</span>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg group relative cursor-pointer">
+          <img src="images/photoshoot.jpg" alt="Studio photoshoot" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+            <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Behind the Scenes Studio Session</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- ============ TESTIMONIALS SECTION ============ -->
-  <section class="testimonials" id="testimonials">
-    <div class="container container--wide">
-      <div class="testimonials-header">
-        <span class="section-label reveal">Testimonials</span>
-        <h2 class="section-title reveal stagger-1">What Industry Leaders Say</h2>
-        <div class="divider divider--center reveal stagger-2"></div>
+  <section class="py-24 bg-slate-100 dark:bg-slate-900/40 border-t border-slate-200 dark:border-slate-800/50" id="testimonials">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center space-y-4 max-w-3xl mx-auto mb-16">
+        <div class="text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400">Testimonials</div>
+        <h2 class="font-heading text-3xl sm:text-5xl font-bold text-slate-900 dark:text-slate-100">What Industry Leaders Say</h2>
+        <div class="w-16 h-0.5 bg-gradient-to-r from-amber-500 to-amber-300 mx-auto"></div>
       </div>
 
-      <div class="testimonials-grid">
-        <div class="testimonial-card reveal stagger-2">
-          <p class="testimonial-text">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="p-8 rounded-2xl bg-white dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 space-y-6 shadow-sm">
+          <p class="text-slate-700 dark:text-slate-300 italic text-sm sm:text-base leading-relaxed">
             "Alan's knowledge of the hair replacement industry is unmatched. His hands-on experience as both a wearer and a business owner gives him a perspective that no textbook can teach. He's the real deal — honest, direct, and truly passionate about helping people."
           </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">LC</div>
-            <div class="testimonial-info">
-              <div class="name">Lance Centofanti</div>
-              <div class="role">Industry Professional</div>
+          <div class="flex items-center space-x-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+            <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-600 dark:text-amber-400 font-bold flex items-center justify-center text-sm">LC</div>
+            <div>
+              <div class="font-bold text-slate-900 dark:text-slate-100 text-sm">Lance Centofanti</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400">Industry Professional</div>
             </div>
           </div>
         </div>
 
-        <div class="testimonial-card reveal stagger-3">
-          <p class="testimonial-text">
+        <div class="p-8 rounded-2xl bg-white dark:bg-slate-950/70 border border-slate-200 dark:border-slate-800 space-y-6 shadow-sm">
+          <p class="text-slate-700 dark:text-slate-300 italic text-sm sm:text-base leading-relaxed">
             "Alan is one of the most respected professionals in our industry. His ability to connect with clients, train staff, and drive real business results is something I've witnessed firsthand over many years. Anyone who gets to work with him is getting the best."
           </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">LH</div>
-            <div class="testimonial-info">
-              <div class="name">Lew Hutchinson</div>
-              <div class="role">Owner, Envisions of Connecticut</div>
+          <div class="flex items-center space-x-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+            <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-600 dark:text-amber-400 font-bold flex items-center justify-center text-sm">LH</div>
+            <div>
+              <div class="font-bold text-slate-900 dark:text-slate-100 text-sm">Lew Hutchinson</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400">Owner, Envisions of Connecticut</div>
             </div>
           </div>
         </div>
@@ -350,293 +404,148 @@
   </section>
 
   <!-- ============ PRODUCTS SECTION ============ -->
-  <section class="products" id="products">
-    <div class="container container--wide">
-      <div class="products-header">
-        <span class="section-label reveal">Shop</span>
-        <h2 class="section-title reveal stagger-1">Curated Products</h2>
-        <div class="divider divider--center reveal stagger-2"></div>
-        <p class="section-subtitle reveal stagger-2">
+  <section class="py-24 bg-white dark:bg-slate-950" id="products">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center space-y-4 max-w-3xl mx-auto mb-16">
+        <div class="text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400">Shop</div>
+        <h2 class="font-heading text-3xl sm:text-5xl font-bold text-slate-900 dark:text-slate-100">Curated Products</h2>
+        <div class="w-16 h-0.5 bg-gradient-to-r from-amber-500 to-amber-300 mx-auto"></div>
+        <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
           Hand-selected products and solutions backed by decades of personal testing and professional experience.
         </p>
       </div>
 
-      <div class="products-grid">
-        <div class="product-card reveal stagger-1">
-          <div class="product-image">
-            <span class="product-icon">🧴</span>
-            <span class="coming-soon">Available Soon</span>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 flex flex-col justify-between shadow-sm">
+          <div class="space-y-4">
+            <div class="text-4xl">🧴</div>
+            <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-slate-100">Hair System Care Kit</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Professional-grade maintenance products that I've tested and used personally for over two decades.</p>
           </div>
-          <div class="product-info">
-            <h3>Hair System Care Kit</h3>
-            <p>Professional-grade maintenance products that I've tested and used personally for over two decades.</p>
-            <a href="#contact" class="btn btn-outline">Inquire for Details</a>
-          </div>
+          <a href="#contact" class="mt-6 inline-block text-center px-6 py-3 border border-amber-500/50 hover:bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold text-xs uppercase tracking-wider rounded-lg transition-all">Inquire for Details</a>
         </div>
 
-        <div class="product-card reveal stagger-2">
-          <div class="product-image">
-            <span class="product-icon">💆</span>
-            <span class="coming-soon">Available Soon</span>
+        <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 flex flex-col justify-between shadow-sm">
+          <div class="space-y-4">
+            <div class="text-4xl">💆</div>
+            <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-slate-100">Trichology Treatment Line</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Scalp health solutions for early-stage hair loss and scalp conditions — backed by clinical trichology training.</p>
           </div>
-          <div class="product-info">
-            <h3>Trichology Treatment Line</h3>
-            <p>Scalp health solutions for early-stage hair loss and scalp conditions — backed by clinical trichology training.</p>
-            <a href="#contact" class="btn btn-outline">Inquire for Details</a>
-          </div>
+          <a href="#contact" class="mt-6 inline-block text-center px-6 py-3 border border-amber-500/50 hover:bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold text-xs uppercase tracking-wider rounded-lg transition-all">Inquire for Details</a>
         </div>
 
-        <div class="product-card reveal stagger-3">
-          <div class="product-image">
-            <span class="product-icon">📘</span>
-            <span class="coming-soon">Available Soon</span>
+        <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 flex flex-col justify-between shadow-sm">
+          <div class="space-y-4">
+            <div class="text-4xl">📘</div>
+            <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-slate-100">Industry Training Guide</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">A comprehensive guide covering sales techniques, client retention, and business operations for hair loss studios.</p>
           </div>
-          <div class="product-info">
-            <h3>Industry Training Guide</h3>
-            <p>A comprehensive guide covering sales techniques, client retention, and business operations for hair loss studios.</p>
-            <a href="#contact" class="btn btn-outline">Inquire for Details</a>
-          </div>
+          <a href="#contact" class="mt-6 inline-block text-center px-6 py-3 border border-amber-500/50 hover:bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold text-xs uppercase tracking-wider rounded-lg transition-all">Inquire for Details</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ============ YOUTUBE / CONTENT SECTION ============ -->
-  <section class="content-section" id="content">
-    <div class="container container--wide">
-      <div class="content-header">
-        <span class="section-label reveal">Content</span>
-        <h2 class="section-title reveal stagger-1">Watch & Learn</h2>
-        <div class="divider divider--center reveal stagger-2"></div>
-        <p class="section-subtitle reveal stagger-2">
-          Real talk about hair loss, the industry, and building a business — from someone who's lived every side of it.
-        </p>
-      </div>
-
-      <div class="videos-grid">
-        <div class="video-card reveal stagger-1">
-          <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/GCOR4ctSZ8Y" title="Alan Humphreys Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-          </div>
-          <div class="video-info">
-            <h4>Industry Insights</h4>
-            <p>Sharing knowledge from 25+ years in hair loss solutions</p>
-          </div>
-        </div>
-
-        <div class="video-card reveal stagger-2">
-          <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/KXcpk99GYd8" title="Alan Humphreys Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-          </div>
-          <div class="video-info">
-            <h4>Hair Replacement Talk</h4>
-            <p>Honest conversation about what works and what doesn't</p>
-          </div>
-        </div>
-
-        <div class="video-card reveal stagger-3">
-          <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/MqH_oaBfKOs" title="Alan Humphreys Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-          </div>
-          <div class="video-info">
-            <h4>Business Growth Tips</h4>
-            <p>Strategies from building and selling a successful business</p>
-          </div>
-        </div>
-
-        <div class="video-card reveal stagger-4">
-          <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/IMwsLQ8KQto" title="Alan Humphreys Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-          </div>
-          <div class="video-info">
-            <h4>Client Confidence</h4>
-            <p>How hair restoration transforms lives beyond appearance</p>
-          </div>
-        </div>
-
-        <div class="video-card reveal stagger-5">
-          <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/cAr7KmVXOeM" title="Alan Humphreys Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-          </div>
-          <div class="video-info">
-            <h4>Trichology & The Future</h4>
-            <p>Why trichology is the fastest-growing industry segment</p>
-          </div>
-        </div>
-
-        <div class="video-card reveal stagger-6">
-          <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/UdyhxIxd-YY" title="Alan Humphreys Short" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-          </div>
-          <div class="video-info">
-            <h4>Quick Tips</h4>
-            <p>Bite-sized expertise for professionals and clients</p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- ============ CONTACT / INTAKE FORM ============ -->
-  <section class="contact" id="contact">
-    <div class="container container--wide">
-      <div class="contact-info reveal-left">
-        <span class="section-label">Get in Touch</span>
-        <h2 class="section-title">Let's Work Together</h2>
-        <div class="divider"></div>
-        <p>
-          Whether you're a solo operator, a growing studio, or a salon looking to add hair replacement and trichology services — I'd love to hear from you. The first step is simple: tell me about your business.
-        </p>
+  <section class="py-24 bg-slate-100 dark:bg-slate-900/60 border-t border-slate-200 dark:border-slate-800/50" id="contact">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <div class="text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400">Get in Touch</div>
+          <h2 class="font-heading text-3xl sm:text-5xl font-bold text-slate-900 dark:text-slate-100">Let's Work Together</h2>
+          <div class="w-16 h-0.5 bg-gradient-to-r from-amber-500 to-amber-300"></div>
+          <p class="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+            Whether you're a solo operator, a growing studio, or a salon looking to add hair replacement and trichology services — I'd love to hear from you.
+          </p>
 
-        <ul class="contact-details">
-          <li>
-            <div class="detail-icon">📧</div>
-            <div class="detail-text">
-              <div class="label">Email</div>
-              <div class="value"><a href="mailto:alanhumphreys72@gmail.com">alanhumphreys72@gmail.com</a></div>
+          <div class="space-y-4 pt-4 text-sm text-slate-700 dark:text-slate-300">
+            <div class="flex items-center space-x-3">
+              <span class="text-lg">📧</span>
+              <a href="mailto:alanhumphreys72@gmail.com" class="hover:text-amber-500 dark:hover:text-amber-400 transition-colors">alanhumphreys72@gmail.com</a>
             </div>
-          </li>
-          <li>
-            <div class="detail-icon">📱</div>
-            <div class="detail-text">
-              <div class="label">Phone / WhatsApp</div>
-              <div class="value"><a href="tel:+13037181870">303-718-1870</a></div>
+            <div class="flex items-center space-x-3">
+              <span class="text-lg">📱</span>
+              <a href="tel:+13037181870" class="hover:text-amber-500 dark:hover:text-amber-400 transition-colors">303-718-1870</a>
             </div>
-          </li>
-          <li>
-            <div class="detail-icon">📍</div>
-            <div class="detail-text">
-              <div class="label">Location</div>
-              <div class="value">North Palm Beach, Florida</div>
-            </div>
-          </li>
-        </ul>
-
-        <a href="https://wa.me/+13037181870" target="_blank" class="btn btn-outline" style="gap: 0.5rem;">
-          💬 Chat on WhatsApp
-        </a>
-      </div>
-
-      <div class="contact-form reveal-right" id="contactForm">
-        <h3>Start the Conversation</h3>
-        <p class="form-subtitle">Fill out the quick intake form and I'll get back to you personally.</p>
-
-        <form id="intakeForm" onsubmit="handleFormSubmit(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName">First Name *</label>
-              <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
-            </div>
-            <div class="form-group">
-              <label for="lastName">Last Name *</label>
-              <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+            <div class="flex items-center space-x-3">
+              <span class="text-lg">📍</span>
+              <span>North Palm Beach, Florida</span>
             </div>
           </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" placeholder="you@company.com" required>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="businessType">What best describes your business? *</label>
-            <select id="businessType" name="businessType" required>
-              <option value="" disabled selected>Select your business type</option>
-              <option value="hair-replacement">Hair Replacement Studio</option>
-              <option value="hair-salon">Hair Salon / Barber</option>
-              <option value="trichology">Trichology Practice</option>
-              <option value="startup">Starting a New Business</option>
-              <option value="manufacturer">Manufacturer / Wholesaler</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="interest">What are you looking for? *</label>
-            <select id="interest" name="interest" required>
-              <option value="" disabled selected>Select your primary interest</option>
-              <option value="consulting">Business Consulting</option>
-              <option value="sales-training">Sales Training & Coaching</option>
-              <option value="trichology-training">Trichology Training</option>
-              <option value="speaking">Speaking Engagement</option>
-              <option value="product-inquiry">Product Inquiry</option>
-              <option value="advisory">Advisory Retainer</option>
-              <option value="content">Content / Podcast Collaboration</option>
-              <option value="other">Something Else</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Tell me more about your situation</label>
-            <textarea id="message" name="message" placeholder="Share a bit about your business, your goals, or any specific challenges you're facing..."></textarea>
-          </div>
-
-          <div class="form-submit">
-            <button type="submit" class="btn btn-primary">Submit Inquiry →</button>
-          </div>
-        </form>
-
-        <div class="form-success" id="formSuccess">
-          <div class="success-icon">✅</div>
-          <h3>Thank You!</h3>
-          <p>Your inquiry has been received. I'll review your information and get back to you personally within 24–48 hours.</p>
         </div>
+
+        <!-- Form Box -->
+        <div class="lg:col-span-7 p-8 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-2xl">
+          <h3 class="font-heading text-2xl font-bold text-slate-900 dark:text-slate-100 mb-2">Start the Conversation</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm mb-6">Fill out the quick intake form and I'll get back to you personally.</p>
+
+          <form id="intakeForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-slate-100 text-sm focus:border-amber-500 focus:outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-slate-100 text-sm focus:border-amber-500 focus:outline-none">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Email *</label>
+                <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-slate-100 text-sm focus:border-amber-500 focus:outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Phone</label>
+                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-slate-100 text-sm focus:border-amber-500 focus:outline-none">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Business Type *</label>
+              <select id="businessType" name="businessType" required class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-slate-100 text-sm focus:border-amber-500 focus:outline-none">
+                <option value="" disabled selected>Select your business type</option>
+                <option value="hair-replacement">Hair Replacement Studio</option>
+                <option value="hair-salon">Hair Salon / Barber</option>
+                <option value="trichology">Trichology Practice</option>
+                <option value="startup">Starting a New Business</option>
+                <option value="manufacturer">Manufacturer / Wholesaler</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Message</label>
+              <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-slate-100 text-sm focus:border-amber-500 focus:outline-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-4 bg-gradient-to-r from-amber-500 to-amber-400 text-slate-950 font-bold text-xs uppercase tracking-widest rounded-lg shadow-lg hover:shadow-amber-500/20 hover:-translate-y-0.5 transition-all">
+              Submit Inquiry →
+            </button>
+          </form>
+
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- ============ FOOTER ============ -->
-  <footer class="footer" id="footer">
-    <div class="container container--wide">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="#hero" class="nav-logo">ALAN <span>Humphreys</span></a>
-          <p>25+ years of leadership in hair loss solutions, trichology, and business growth strategy. Expert. Consultant. Innovator.</p>
-          <div class="footer-social">
-            <a href="https://wa.me/+13037181870" target="_blank" title="WhatsApp" aria-label="WhatsApp">💬</a>
-            <a href="mailto:alanhumphreys72@gmail.com" title="Email" aria-label="Email">📧</a>
-            <a href="tel:+13037181870" title="Phone" aria-label="Phone">📞</a>
-          </div>
-        </div>
-
-        <div class="footer-links">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#credentials">Credentials</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-links">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="#services">Virtual Consultations</a></li>
-            <li><a href="#services">Sales Training</a></li>
-            <li><a href="#services">Trichology Training</a></li>
-            <li><a href="#services">Speaking</a></li>
-            <li><a href="#products">Products</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 Alan Humphreys. All rights reserved.</p>
-        <p>North Palm Beach, FL · <a href="tel:+13037181870">303-718-1870</a></p>
-      </div>
+  <footer class="py-12 bg-slate-900 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800/80 text-xs text-slate-600 dark:text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <div class="font-heading text-lg font-bold text-slate-900 dark:text-slate-200">ALAN <span class="text-amber-500 font-normal">Humphreys</span></div>
+      <p>&copy; 2026 Alan Humphreys. All rights reserved. North Palm Beach, FL · 303-718-1870</p>
     </div>
   </footer>
 
-  <!-- Scroll to Top -->
-  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>Beach, FL · 303-718-1870</p>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>

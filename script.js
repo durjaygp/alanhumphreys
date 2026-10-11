@@ -3,6 +3,7 @@
    ============================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
   initNavbar();
   initScrollReveal();
   initMobileMenu();
@@ -11,6 +12,52 @@ document.addEventListener('DOMContentLoaded', () => {
   initActiveNav();
   initParallax();
 });
+
+/* --- Theme Toggle (Light / Dark Mode — Tailwind Ready) --- */
+function initThemeToggle() {
+  const toggleBtn = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('ah-theme') || 'dark';
+
+  // Apply initial theme via Tailwind class & data-theme
+  if (savedTheme === 'light') {
+    document.documentElement.classList.remove('dark');
+    document.documentElement.classList.add('light');
+    document.documentElement.setAttribute('data-theme', 'light');
+    if (toggleBtn) {
+      const icon = toggleBtn.querySelector('.theme-toggle-icon');
+      if (icon) icon.textContent = '☀️';
+    }
+  } else {
+    document.documentElement.classList.remove('light');
+    document.documentElement.classList.add('dark');
+    document.documentElement.setAttribute('data-theme', 'dark');
+    if (toggleBtn) {
+      const icon = toggleBtn.querySelector('.theme-toggle-icon');
+      if (icon) icon.textContent = '🌙';
+    }
+  }
+
+  if (!toggleBtn) return;
+
+  toggleBtn.addEventListener('click', () => {
+    const isLight = document.documentElement.classList.contains('light');
+    const icon = toggleBtn.querySelector('.theme-toggle-icon');
+
+    if (isLight) {
+      document.documentElement.classList.remove('light');
+      document.documentElement.classList.add('dark');
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('ah-theme', 'dark');
+      if (icon) icon.textContent = '🌙';
+    } else {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+      document.documentElement.setAttribute('data-theme', 'light');
+      localStorage.setItem('ah-theme', 'light');
+      if (icon) icon.textContent = '☀️';
+    }
+  });
+}
 
 /* --- Navbar scroll effect --- */
 function initNavbar() {
